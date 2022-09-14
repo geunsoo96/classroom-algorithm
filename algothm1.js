@@ -32,6 +32,6 @@ let student = [
 // Q. "내 이름"은 몇번째 인지 console에 출력하시오.
 
 // indexOf() --> 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.
-let geunsoo = student.indexOf("김근수");
+let geunsoo = student.indexOf("김근수") + 1;
 console.log("김근수는" + geunsoo + "번째");
-// 김근수는20번째
+// 김근수는21번째
