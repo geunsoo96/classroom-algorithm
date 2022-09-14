@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li>menus-1</li>
+        <li>menus-2</li>
+        <li>menus-3</li>
+        <li>menus-4</li>
+        <li>menus-5</li>
+      </ul>
+      <button>click</button>
+    </div>
+    <script>
+      // Q. <button> 태그를 클릭하면 <li> 태그 5개 모두 배경색이 "cadetblue" 값으로 바뀌도록 인터렉션을 부여하시오.
+      const li = document.getElementsByTagName("li");
+      const button = document.getElementsByTagName("button");
+      button[0].addEventListener("click", function () {
+        for (let i = 0; i < li.length; i++) {
+          li[i].style.backgroundColor = "cadetblue";
+        }
+      });
+    </script>
+  </body>
+</html>
