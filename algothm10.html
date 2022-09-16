@@ -949,7 +949,53 @@
     }
     console.log(`네글자 포켓몬은 ${goCount}개`);
     // Q_4. 프론트엔드 요청 "포켓몬스터 중 300번 몬스터부터 350번 몬스터를 수정해야 하는데 인터넷에 공모를 할 예정입니다. 브라우저에서 볼수 있게끔 카드형식으로 표현해서 몬스터의 번호와 이름이 뜨도록 웹페이지 만들어주세요"
-
+    for (let i = 1; i < pokemon.length; i++) {
+      if (i >= 300) {
+        pokemon[i].style.display = "flex";
+        pokemon[i].style.justifyContent = "center";
+        pokemon[i].style.alignItems = "center";
+        pokemon[i].style.backgroundColor = "lightgreen";
+        pokemon[i].style.margin = "5px";
+        pokemon[i].style.width = "300px";
+        pokemon[i].style.height = "100px";
+        pokemon[i].style.borderRadius = "10px";
+        let pokemonText = pokemon[i].textContent;
+        pokemon[i].textContent = `${i}번째 포켓몬 ${pokemonText}`;
+        for (let j = 1; j < pokemon.length; j++) {
+          if (j > 350) {
+            pokemon[j].style.display = "none";
+          }
+        }
+      }
+    }
     // Q_5. 백엔드 요청 "포켓몬스터 이름 갯수가 2개 ~ 5개 내외인 것으로 확인은 되지만, 조금더 정확한 데이터를 얻고 싶습니다. 이름 갯수별 총 갯수를 구해주세요." (예 > 두글자 : 23개, 세글자 : 1455개, 6개: 0개)
+    let twoCount = 0;
+    let threeCount = 0;
+    let fourCount = 0;
+    let fiveCount = 0;
+    for (let i = 0; i < pokemon.length; i++) {
+      if (pokemon[i].firstChild.length === 2) {
+        twoCount++;
+      }
+    }
+    for (let i = 0; i < pokemon.length; i++) {
+      if (pokemon[i].textContent.length === 3) {
+        threeCount++;
+      }
+    }
+    for (let i = 0; i < pokemon.length; i++) {
+      if (pokemon[i].firstChild.length === 4) {
+        fourCount++;
+      }
+    }
+    for (let i = 0; i < pokemon.length; i++) {
+      if (pokemon[i].firstChild.length === 5) {
+        fiveCount++;
+      }
+    }
+    console.log(`두글자: ${twoCount}개`);
+    console.log(`세글자: ${threeCount}개`);
+    console.log(`네글자: ${fourCount}개`);
+    console.log(`다섯글자: ${fiveCount}개`);
   </script>
 </html>
