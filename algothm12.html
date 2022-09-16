@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let body = document.body;
+      const digimon = [
+        "아구몬",
+        "파피몬",
+        "피요몬",
+        "팔몬",
+        "쉬라몬",
+        "텐타몬",
+        "파닥몬",
+        "오메가몬",
+      ];
+
+      // Q_1 프론트엔드 요청 : 배열의 갯수만큼 <li> 태그를 연출해 놓으세요.
+      for (let i = 0; i < digimon.length; i++) {
+        digimonList = document.createElement("li");
+        body.appendChild(digimonList);
+        digimonList.textContent = digimon[i];
+      }
+
+      // Q_2 백엔드 요청 : 디지몬 문자열 마다 "님" 이라는 단어를 붙여 가공하세요.
+      let nim = digimon.map((arr) => arr + "님");
+      console.log(nim);
+    </script>
+  </body>
+</html>
