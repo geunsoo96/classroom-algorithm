@@ -27,3 +27,4 @@ for (let i = 0; i < pokemon.length; i++) {
   let data = new pokemonData(i, pokemon[i], random1, random2);
   console.log(data);
 }
+// pokemonData { number: 5, id: '리자몽', type1: '물', type2ype2: '비행' }: '독' }
